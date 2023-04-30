@@ -1,6 +1,6 @@
 import { TitleCasePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { Fruit } from './fruit';
 import { FruitService } from './fruit.service';
 
@@ -14,13 +14,13 @@ export class FruitComponent implements OnInit {
 
   fruits: Fruit[] = [];
   displayedColumns: string[] = ['id', 'name', 'action'];
-  fruitForm!: FormGroup;
+  fruitForm!: UntypedFormGroup;
   isEditingFruit: boolean = false;
   editingFruit!: Fruit;
 
   constructor(
     private fruitService: FruitService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private titlecasePipe: TitleCasePipe) { }
 
   ngOnInit(): void {
